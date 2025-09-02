@@ -1,0 +1,17 @@
+[
+  {
+    "title": "PickStars-MaterialDesign",
+    "description": "PickStars is a free and easy-to-use mobile phone tool software online can easily get a lot of convenient tools, what gadgets you like to search and experience by yourself, the tool is divided into very detailed according to the type, no need to download a bunch of software.",
+    "link": "/PickStars"
+  },
+  {
+    "title": "StarTrailWebsite",
+    "description": "This is a static personal homepage built with Vue 3, TypeScript, and Vite, featuring glowing effects and a dynamic design to showcase personal information and skills. It’s ideal for developers or anyone seeking a modern, stylish personal page.",
+    "link": "https://github.com/PickStars308/StarTrailWebsite"
+  },
+  {
+    "title": "StarTrailWebSiteNew",
+    "description": "A high-quality personal homepage project built with Vue 3 + TypeScript + Vite.",
+    "link": "https://github.com/PickStars308/StarTrailWebSiteNew"
+  }
+]

@@ -1,0 +1,12 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; // 统一盒模型：border/padding 不撑大元素
+}
+
+html, body, div, p, h1, h2, h3, h4, h5, h6, ul, li, a, table, td, th {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
