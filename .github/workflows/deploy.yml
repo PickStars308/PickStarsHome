@@ -4,7 +4,6 @@ on:
   push:
     tags:
       - 'V*'
-  workflow_dispatch:
 
 permissions:
   contents: write
@@ -32,14 +31,20 @@ jobs:
       - name: Zip dist folder
         run: zip -r dist.zip dist
 
-      # 合并创建 Release 和上传资产的步骤（使用最新插件，避免重复）
-      - name: Create and upload Release
-        uses: softprops/action-gh-release@v2  # 该插件可同时创建Release和上传资产
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
         with:
-          tag_name: ${{ github.ref_name }}  # 使用当前标签名
-          name: Release ${{ github.ref_name }}  # Release标题
-          files: dist.zip  # 要上传的资产文件
+          tag_name: ${{ github.ref_name }}
+          release_name: Release ${{ github.ref_name }}
           draft: false
           prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload Release Asset
+        uses: softprops/action-gh-release@v1
+        with:
+          files: dist.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
