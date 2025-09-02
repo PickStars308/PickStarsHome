@@ -15,12 +15,12 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4  # 升级到最新版
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4  # 升级到最新版
+        uses: actions/setup-node@v4
         with:
-          node-version: 20.x  # 满足 Vite 要求的版本
+          node-version: 20.x  # 确保满足 Vite 版本要求
           cache: 'npm'
 
       - name: Install dependencies
@@ -32,20 +32,14 @@ jobs:
       - name: Zip dist folder
         run: zip -r dist.zip dist
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
+      # 合并创建 Release 和上传资产的步骤（使用最新插件，避免重复）
+      - name: Create and upload Release
+        uses: softprops/action-gh-release@v2  # 该插件可同时创建Release和上传资产
         with:
-          tag_name: ${{ github.ref_name }}
-          release_name: Release ${{ github.ref_name }}
+          tag_name: ${{ github.ref_name }}  # 使用当前标签名
+          name: Release ${{ github.ref_name }}  # Release标题
+          files: dist.zip  # 要上传的资产文件
           draft: false
           prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Upload Release Asset
-        uses: softprops/action-gh-release@v2  # 升级到最新版
-        with:
-          files: dist.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
