@@ -7,6 +7,13 @@ declare module '*.vue' {
     export default component
 }
 
+// 添加 PWA 虚拟模块声明
+declare module 'virtual:pwa-register' {
+    import type { RegisterSWOptions } from 'vite-plugin-pwa/types'
+
+    export function registerSW(options?: RegisterSWOptions): (reloadPage?: boolean) => Promise<void>
+}
+
 // 扩展环境变量类型（与.env配置同步）
 interface ImportMetaEnv {
     // 默认配置

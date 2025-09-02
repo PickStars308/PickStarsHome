@@ -50,13 +50,19 @@ const cycleTheme = (event: MouseEvent) => {
       : themeStore.theme === 'dark' ? 'light'
           : 'system';
 
-  rippleBackground(event, nextTheme, () => {
-    themeStore.setTheme(nextTheme);
+  rippleBackground({
+    event: event, targetTheme: nextTheme, callback: () => {
+      themeStore.setTheme(nextTheme);
+    }
   });
 };
 
 
-const rippleBackground = (event: MouseEvent, targetTheme: 'light' | 'dark' | 'system', callback: () => void) => {
+const rippleBackground = ({targetTheme, callback}: {
+  event: MouseEvent,
+  targetTheme: "light" | "dark" | "system",
+  callback: () => void
+}) => {
   const ripple = document.createElement('div');
   const body = document.body;
 
@@ -99,6 +105,14 @@ const rippleBackground = (event: MouseEvent, targetTheme: 'light' | 'dark' | 'sy
   }, 500);
 };
 
+
+const handleSettingsClick = () => {
+  console.log('Settings clicked');
+};
+
+const handleLanguageClick = () => {
+  console.log('Language clicked');
+};
 
 </script>
 
