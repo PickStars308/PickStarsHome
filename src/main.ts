@@ -1,9 +1,9 @@
 // main.ts
-import { createApp } from 'vue'
+import {createApp} from 'vue'
 import App from './App.vue'
 import router from './router'
 
-import { createPinia } from 'pinia'
+import {createPinia} from 'pinia'
 import ElementPlus from 'element-plus'
 import '@/styles/global.scss';
 import '@fortawesome/fontawesome-free/css/all.css'
@@ -24,8 +24,14 @@ new WOW({
     live: true,
 }).init()
 
+import {SmoothScroll} from "@/utils/smooth-scroll.ts"
+
+document.addEventListener('DOMContentLoaded', () => {
+    new SmoothScroll(400, 2.5);
+});
+
 // PWA 注册
-import { registerSW } from 'virtual:pwa-register'
+import {registerSW} from 'virtual:pwa-register'
 
 const updateSW = registerSW({
     onNeedRefresh() {

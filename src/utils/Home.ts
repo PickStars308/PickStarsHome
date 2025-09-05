@@ -129,7 +129,6 @@ export function helloInit(): void {
 const anniversaries: Record<string, { name: string; message: string }> = {
     4.4: {name: "清明节", message: "祭奠先烈，铭记历史"},
     5.12: {name: "汶川大地震纪念日", message: "怀念逝者，感恩生者"},
-    9.3: {name: "中国人民抗日战争纪念日", message: "勿忘国耻，振兴中华"},
     9.18: {name: "九·一八事变纪念日", message: "铭记历史，警钟长鸣"},
     12.13: {
         name: "南京大屠杀死难者国家公祭日",

@@ -8,13 +8,18 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    AppFooter: typeof import('./src/components/home/AppFooter.vue')['default']
-    AppHeader: typeof import('./src/components/home/AppHeader.vue')['default']
+    AppFooter: typeof import('./src/components/app/AppFooter.vue')['default']
+    AppHeader: typeof import('./src/components/app/AppHeader.vue')['default']
+    BackToTop: typeof import('./src/components/BackToTop.vue')['default']
+    CardsPage: typeof import('./src/components/home/CardsPage.vue')['default']
     GridBackground: typeof import('./src/components/GridBackground.vue')['default']
+    HomeMain: typeof import('./src/components/home/HomeMain.vue')['default']
     Loading: typeof import('./src/components/Loading.vue')['default']
     MouseCursor: typeof import('./src/components/MouseCursor.vue')['default']
+    ParallaxWaves: typeof import('./src/components/ParallaxWaves.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SettingsDialog: typeof import('./src/components/dialog/SettingsDialog.vue')['default']
     SiteRuntime: typeof import('./src/components/SiteRuntime.vue')['default']
     Typewriter: typeof import('./src/components/Typewriter.vue')['default']
   }

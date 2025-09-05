@@ -74,8 +74,8 @@ defineProps({
   width: 100vw;
   height: 100vh;
   background-color: var(--color-background);
-  opacity: v-bind(bgOpacity);
-  z-index: -1; /* 确保在内容下方 */
+  opacity: 0.95; /* 或者传入 CSS 变量 --bg-opacity */
+  z-index: -1;
   overflow: hidden;
 
   @keyframes moveUp {
@@ -83,7 +83,7 @@ defineProps({
       transform: translateY(0);
     }
     100% {
-      transform: translateY(v-bind('gridSize * -1') px);
+      transform: translateY(-30px);
     }
   }
 
@@ -102,17 +102,16 @@ defineProps({
             var(--line-color) 100%
     );
     background-size: var(--grid-size) 100%;
-    background-position: 0 0;
     opacity: var(--line-opacity);
   }
 
-  /* 横线网格基础样式 */
+  /* 横线网格 */
   .horizontal-grid {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: calc(100% + var(--grid-size));
+    height: 200%; /* 延伸防止动画空白 */
     background-image: linear-gradient(
             to bottom,
             transparent 0%,
@@ -125,16 +124,16 @@ defineProps({
     animation: moveUp var(--animation-speed) linear infinite;
   }
 
-
-  /* 多层网格创建视差效果，增强移动感 */
+  /* 多层网格视差 */
   .layer-1 {
     animation-delay: 0s;
   }
 
   .layer-2 {
-    background-position: 0 calc(var(--grid-size) / 2); /* 错位排列 */
-    animation-delay: calc(var(--animation-speed) / -2); /* 反向延迟 */
-    opacity: calc(var(--line-opacity) * 0.6); /* 第二层更淡 */
+    background-position: 0 calc(var(--grid-size) / 2);
+    animation-delay: calc(var(--animation-speed) / -2);
+    opacity: calc(var(--line-opacity) * 0.6);
   }
 }
+
 </style>

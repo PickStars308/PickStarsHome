@@ -1,5 +1,7 @@
 <template>
 
+  <SettingsDialog/>
+
   <GridBackground
       :gridSize="100"
       :lineWidth="1"
@@ -27,9 +29,12 @@
 
   <Loading/>
 
+  <BackToTop />
+
 </template>
 
 <script setup lang="ts">
+
 
 import {onMounted, onBeforeUnmount, watch} from 'vue'
 
@@ -52,11 +57,13 @@ const icon = `
 
     `;
 import {useAppStore} from '@/stores/index.ts'
-import AppHeader from "@/components/home/AppHeader.vue";
+import AppHeader from "@/components/app/AppHeader.vue";
 
 import { useThemeStore } from './stores/theme.ts'
 import GridBackground from "@/components/GridBackground.vue";
-import AppFooter from "@/components/home/AppFooter.vue";
+import AppFooter from "@/components/app/AppFooter.vue";
+import SettingsDialog from "@/components/dialog/SettingsDialog.vue";
+import BackToTop from "@/components/BackToTop.vue";
 
 // 关键：在应用挂载前初始化主题
 const themeStore = useThemeStore()
@@ -186,6 +193,7 @@ onBeforeUnmount(() => {
 #app {
   height: 100vh; // 修正之前的wh为vh
   position: relative;
+  scroll-behavior: smooth; /* 关键：给滚动容器加平滑滚动 */
 }
 
 /* 渐显过渡动画样式 */

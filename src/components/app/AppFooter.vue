@@ -6,7 +6,7 @@
           <p>© {{ new Date().getFullYear() }} {{ SiteAuthor }}. All rights reserved.</p>
           <p class="beian-row">
             <span>
-              <img src="/ic_gongan.png" alt="公安备案图标"/>
+              <img src="/assets/ic_gongan.png" alt="公安备案图标"/>
               <a href="https://beian.mps.gov.cn/#/query/webSearch?code=33021202003484" target="_blank" rel="noreferrer">浙公网安备33021202003484号</a>
             </span>
             ·

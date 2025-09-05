@@ -106,8 +106,12 @@ const rippleBackground = ({targetTheme, callback}: {
 };
 
 
+import {useSettingsStore} from '@/stores/settings';
+
+const settingsStore = useSettingsStore();
+
 const handleSettingsClick = () => {
-  console.log('Settings clicked');
+  settingsStore.showSettingsDialog();
 };
 
 const handleLanguageClick = () => {

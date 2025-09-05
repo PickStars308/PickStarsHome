@@ -2,18 +2,36 @@
 /* 默认 light 主题（当系统和用户都没有指定时） */
 /* ====================================== */
 html {
+  /* 基础背景 */
   --color-background: #ffffff;            /* 页面背景 */
-  --color-background-soft: #f5f5f5;       /* 次级背景 */
-  --color-background-mute: #eeeeee;       /* 静态背景或卡片背景 */
+  --color-background-soft: #f5f5f5;       /* 次级背景（模块区域） */
+  --color-background-mute: #eeeeee;       /* 静态背景/卡片背景 */
 
-  --color-border: #e0e0e0;                /* 边框颜色 */
-  --color-border-hover: #d0d0d0;          /* hover 边框 */
+  /* 边框 */
+  --color-border: #e0e0e0;
+  --color-border-hover: #d0d0d0;
 
-  --color-heading: #111111;               /* 标题文字 */
-  --color-text: #333333;                  /* 普通文字 */
+  /* 文字 */
+  --color-heading: #111111;
+  --color-text: #333333;
+  --color-text-soft: #666666;             /* 次级文字 */
+  --color-text-mute: #999999;             /* 占位文字 */
 
-  --overlay-background: rgb(255, 255, 255);
-  --loader-color: rgb(0, 0, 0);                   /* loader 方块颜色 */
+  /* 功能色 */
+  --color-primary: #3b82f6;               /* 主色（按钮/高亮） */
+  --color-primary-hover: #2563eb;
+  --color-link: #1d4ed8;                  /* 链接颜色 */
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-error: #dc2626;
+
+  /* 特效色 */
+  --color-overlay: rgba(0, 0, 0, 0.4);    /* 遮罩层背景 */
+  --color-shadow: rgba(0, 0, 0, 0.1);     /* 阴影基础 */
+
+  /* 其他 */
+  --overlay-background: #ffffff;          /* 全屏 overlay 背景 */
+  --loader-color: #000000;                /* loader 方块颜色 */
 }
 
 /* ====================================== */
@@ -30,9 +48,21 @@ html {
 
     --color-heading: #ffffff;
     --color-text: #cccccc;
+    --color-text-soft: #aaaaaa;
+    --color-text-mute: #888888;
 
-    --overlay-background: rgb(0, 0, 0);
-    --loader-color: rgb(255, 255, 255);
+    --color-primary: #60a5fa;
+    --color-primary-hover: #3b82f6;
+    --color-link: #93c5fd;
+    --color-success: #22c55e;
+    --color-warning: #fbbf24;
+    --color-error: #ef4444;
+
+    --color-overlay: rgba(0, 0, 0, 0.6);
+    --color-shadow: rgba(0, 0, 0, 0.5);
+
+    --overlay-background: #000000;
+    --loader-color: #ffffff;
   }
 }
 
@@ -49,9 +79,21 @@ html.dark {
 
   --color-heading: #ffffff;
   --color-text: #cccccc;
+  --color-text-soft: #aaaaaa;
+  --color-text-mute: #888888;
 
-  --overlay-background: rgb(0, 0, 0);
-  --loader-color: rgb(255, 255, 255);
+  --color-primary: #60a5fa;
+  --color-primary-hover: #3b82f6;
+  --color-link: #93c5fd;
+  --color-success: #22c55e;
+  --color-warning: #fbbf24;
+  --color-error: #ef4444;
+
+  --color-overlay: rgba(0, 0, 0, 0.6);
+  --color-shadow: rgba(0, 0, 0, 0.5);
+
+  --overlay-background: #000000;
+  --loader-color: #ffffff;
 }
 
 html.light {
@@ -64,7 +106,19 @@ html.light {
 
   --color-heading: #111111;
   --color-text: #333333;
+  --color-text-soft: #666666;
+  --color-text-mute: #999999;
 
-  --overlay-background: rgb(255, 255, 255);
-  --loader-color: rgb(0, 0, 0);
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+  --color-link: #1d4ed8;
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-error: #dc2626;
+
+  --color-overlay: rgba(0, 0, 0, 0.4);
+  --color-shadow: rgba(0, 0, 0, 0.1);
+
+  --overlay-background: #ffffff;
+  --loader-color: #000000;
 }
